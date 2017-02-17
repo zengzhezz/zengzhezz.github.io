@@ -202,7 +202,7 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"> <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//1. 得到Spring的IOC容器</span></span><br><span class="line">	ApplicationContext ctx = <span class="keyword">new</span> ClassPathXmlApplicationContext(<span class="string">"applicationContext.xml"</span>);</span><br><span class="line">	<span class="comment">//2. 从IOC容器中得到HelloWorld的实例对象</span></span><br><span class="line">	HelloWorld helloworld = (HelloWorld) ctx.getBean(<span class="string">"helloworld"</span>);</span><br><span class="line">	<span class="comment">//3. 调用helloworld的hello()方法</span></span><br><span class="line">	helloworld.hello();</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>getBean()中传入的参数及为之前在配置文件中配置的id</p>
 <p>运行结果如图<br><img src="https://ooo.0o0.ooo/2017/02/17/58a6a70d5aa37.png" alt="63CEC599-BCB3-470C-9D88-E44494AFB121.png"></p>
-<p>事实上，在创建spring IOC容器的时候spring会调用bean的构造器和其中的set方法对属性复制，在需要的时候直接调用即可。</p>
+<p>事实上，在创建spring IOC容器的时候spring会调用bean的构造器和其中的set方法对属性赋值，在需要的时候直接调用即可。</p>
 
 
                 <hr>
