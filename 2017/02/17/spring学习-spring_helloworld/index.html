@@ -13,11 +13,11 @@
 
     <title>
         
-          hibernate学习笔记 - zz的博客
+          spring学习-spring helloworld - zz的博客
         
     </title>
 
-    <link rel="canonical" href="http://yoursite.com/2016/12/21/hibernate学习笔记/">
+    <link rel="canonical" href="http://yoursite.com/2017/02/17/spring学习-spring_helloworld/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css" type="text/css">
@@ -148,7 +148,7 @@
 <!-- Post Header -->
 <style type="text/css">
     header.intro-header{
-        background-image: url('pic1.png')
+        background-image: url('pic01.jpg')
     }
 </style>
 <header class="intro-header" >
@@ -161,11 +161,11 @@
                           <a class="tag" href="/tags/#java" title="java">java</a>
                         
                     </div>
-                    <h1>hibernate学习笔记</h1>
-                    <h2 class="subheading">undefined</h2>
+                    <h1>spring学习-spring helloworld</h1>
+                    <h2 class="subheading">spring helloworld</h2>
                     <span class="meta">
                         Posted by zz on
-                        2016-12-21
+                        2017-02-17
                     </span>
                 </div>
             </div>
@@ -184,7 +184,22 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-                <h2 id="这是我的hibernate学习笔记"><a href="#这是我的hibernate学习笔记" class="headerlink" title="这是我的hibernate学习笔记"></a>这是我的hibernate学习笔记</h2><p>this is just a test.</p>
+                <h1 id="spring-helloworld"><a href="#spring-helloworld" class="headerlink" title="spring helloworld"></a>spring helloworld</h1><p>标签： java spring</p>
+<h4 id="1-在java工程中使用spring首先需要引入spring开发环境，在myeclipse中已经集成了spring的开发环境，只需要配置加入即可"><a href="#1-在java工程中使用spring首先需要引入spring开发环境，在myeclipse中已经集成了spring的开发环境，只需要配置加入即可" class="headerlink" title="1. 在java工程中使用spring首先需要引入spring开发环境，在myeclipse中已经集成了spring的开发环境，只需要配置加入即可"></a>1. 在java工程中使用spring首先需要引入spring开发环境，在myeclipse中已经集成了spring的开发环境，只需要配置加入即可</h4><p>在myeclipse中新建java工程，命名为spring-1</p>
+<p><img src="https://ooo.0o0.ooo/2017/02/17/58a69fc5dbdbd.png" alt="69D79215-D303-4D4F-A4B5-A7EC2F5C6DB3.png"></p>
+<p>在工程中引入spring开发环境，在右边的package explore中找到工程右击，选中myeclipse，选中project facets，找到install spring facet，点击加入。</p>
+<p><img src="https://ooo.0o0.ooo/2017/02/17/58a6a07cc7fef.png" alt="314AB5FF-B32D-4262-AF6B-25A0AAD6C9F0.png"></p>
+<p>一路默认，到选择Configure Project Library时，勾选下面的enable xxx，然后取消勾选上面Core下的log4jxxx.jar，当前我们用不到此包，加进来会在打印的时候提示相关错误信息，所以在此先不加入。</p>
+<p><img src="https://ooo.0o0.ooo/2017/02/17/58a6a15f322e3.png" alt="854CB766-465E-4596-B97D-413381141704.png"></p>
+<h4 id="到此spring环境已经加入到工程，现在开始编写简单的代码"><a href="#到此spring环境已经加入到工程，现在开始编写简单的代码" class="headerlink" title="到此spring环境已经加入到工程，现在开始编写简单的代码"></a>到此spring环境已经加入到工程，现在开始编写简单的代码</h4><p>新建包com.spring.beans，在其中新建HelloWorld类，类中加入下面的代码</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloWorld</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">private</span> String name;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.name = name;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">hello</span><span class="params">()</span></span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"hello: "</span> + name);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在spring的配置文件applicationContext.xml中配置此bean，代码如下</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"> <span class="comment">&lt;!--配置bean  --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">bean</span> <span class="attribute">id</span>=<span class="value">"helloworld"</span> <span class="attribute">class</span>=<span class="value">"com.spring.beans.HelloWorld"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">property</span> <span class="attribute">name</span>=<span class="value">"name"</span> <span class="attribute">value</span>=<span class="value">"zz"</span>&gt;</span><span class="tag">&lt;/<span class="title">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">bean</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>此处的class对应刚刚写的HelloWorld类，id是为此类写的一个唯一的id标识，之后可以通过此标识得到类的对象，property中的name对应HelloWorld类中的属性名，实际上property的配置调用的实例类中的set方法，所以name中的值一定要与类中的属性名称一致。</p>
+<p>配置好后可以通过spring的IOC容器来得到HelloWold类的实例，新建测试类Main.class,添加main方法，在main方法中做测试，代码如下</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"> <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//1. 得到Spring的IOC容器</span></span><br><span class="line">	ApplicationContext ctx = <span class="keyword">new</span> ClassPathXmlApplicationContext(<span class="string">"applicationContext.xml"</span>);</span><br><span class="line">	<span class="comment">//2. 从IOC容器中得到HelloWorld的实例对象</span></span><br><span class="line">	HelloWorld helloworld = (HelloWorld) ctx.getBean(<span class="string">"helloworld"</span>);</span><br><span class="line">	<span class="comment">//3. 调用helloworld的hello()方法</span></span><br><span class="line">	helloworld.hello();</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>getBean()中传入的参数及为之前在配置文件中配置的id</p>
+<p>运行结果如图<br><img src="https://ooo.0o0.ooo/2017/02/17/58a6a70d5aa37.png" alt="63CEC599-BCB3-470C-9D88-E44494AFB121.png"></p>
 
 
                 <hr>
@@ -291,7 +306,7 @@
 
                 </ul>
                 <p class="copyright text-muted">
-                    Copyright &copy; zz的博客 2016 
+                    Copyright &copy; zz的博客 2017 
                     <br>
                     Theme by <a href="http://huangxuan.me">Hux</a> 
                     <span style="display: inline-block; margin: 0 5px;">
