@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="热爱生活，乐于分享">
+    <meta name="keyword"  content="undefined">
+    <link rel="shortcut icon" href="/img/zz.ico">
+
+    <title>
+        
+          论文阅读 - zz的博客
+        
+    </title>
+
+    <link rel="canonical" href="http://yoursite.com/2018/07/16/7.15阅读论文总结/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css" type="text/css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/hux-blog.min.css" type="text/css">
+
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="/css/highlight.css" type="text/css">
+
+    <!-- Custom Fonts -->
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">zz的博客</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/tags/">Tags</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/about/">About</a>
+                        </li>
+                        
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    
+<!-- Image to hack wechat -->
+<!-- <img src="http://yoursite.com/img/icon_wechat.png" width="0" height="0"> -->
+<!-- <img src="{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}" width="0" height="0"> -->
+
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        background-image: url('pic1.png')
+    }
+</style>
+<header class="intro-header" >
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                          <a class="tag" href="/tags/#deep learning" title="deep learning">deep learning</a>
+                        
+                    </div>
+                    <h1>论文阅读</h1>
+                    <h2 class="subheading">总结</h2>
+                    <span class="meta">
+                        Posted by zz on
+                        2018-07-16
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+    <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <h3 id="文章一：SNrram-An-Efficient-Sparse-Neural-Network-Computation-Architecture-Based-on-Resistive-Random-Access-Memory"><a href="#文章一：SNrram-An-Efficient-Sparse-Neural-Network-Computation-Architecture-Based-on-Resistive-Random-Access-Memory" class="headerlink" title="文章一：SNrram: An Efficient Sparse Neural Network Computation Architecture Based on Resistive Random-Access Memory"></a>文章一：SNrram: An Efficient Sparse Neural Network Computation Architecture Based on Resistive Random-Access Memory</h3><p>主要思想是通过RRAM设计了一个有效率的稀疏神经网络的计算结构，通过优化权重和激活值中的稀疏值来消除非0值运算，从而提高资源利用率，减少能耗<br>当前实现的state-of-the-art的RRAM神经网络遇到的挑战</p>
+<ol>
+<li>使用耦合的crossbar结构，很难跳过0值计算</li>
+<li>并行计算需要额外的周期解码数据，这样会导致功耗性能降低</li>
+</ol>
+<p>作者提出的解决方法</p>
+<ol>
+<li>通过分割和重组把稀疏矩阵变成dense矩阵，提高资源利用率，这样可以修剪掉0值运算</li>
+<li>使用RRAM的计算和存储能力来解码和存储数据，避免并行运算电路</li>
+</ol>
+<h4 id="权重的稀疏"><a href="#权重的稀疏" class="headerlink" title="权重的稀疏"></a>权重的稀疏</h4><p>假设输出通道C，输出通道M，filters大小kxk<br>那么所有的权重参数一共是CxkxkxM, 如果把这些参数分成C个子矩阵，那么每个矩阵是kxkxM个权重<br>文章说：“如果对应的某个输入通道的输出通道没修剪掉的话，我们可以在子矩阵中得到整列的空值”<br>as long as an output channel is pruned in any input channel, we can get a whole empty column in a sub-matrix.<br>PS:不是很理解为什么<br>现在假设C=2,k=2,M=4,原始矩阵有8x4个权重值<br><img src="1_weight_sparsity.jpg" width="70%"></p>
+<ol>
+<li>把他分成2个子矩阵，并去掉0值（为了保证矩阵的完整性，部分0没有去掉）</li>
+<li>把形状相同的矩阵放入一个crossbar的不同部分</li>
+<li>根据crossbar的形状把他们进行分组</li>
+<li>使用并行输出通道提高性能</li>
+</ol>
+<p>真实情况下宽往往比高大很多，所以为了不浪费资源，可以把不平衡（长宽大小很不一致）的矩阵合并成接近正方形的矩阵<br>作者提出了一种indexing register unit(IRU)来累加部分结果和解析稀疏格式<br>灰色表示0或关掉，红色表示非0或打开<br>如果同一行不同列的cell都是红色，那么输出相关计算结果</p>
+<h4 id="激活值的稀疏"><a href="#激活值的稀疏" class="headerlink" title="激活值的稀疏"></a>激活值的稀疏</h4><p>两种方式：</p>
+<ol>
+<li>fixed sparsity，就是在输入数据里补0导致计算出的激活值有0</li>
+<li>random sparity，就是在计算过程中动态的产生了0</li>
+</ol>
+<ul>
+<li>对权值不共享的网络（为什么这么说，CNN不是本身就是有权值共享的特性吗，不理解），优化方法和权值稀疏的优化方法类似</li>
+<li>对权值共享的网络,作者提出了一种Sparsity Transfer Algorithm(STA)</li>
+</ul>
+<p><img src="1_activation_sparsity.jpg" width="70%"><br>这个算法我看的不是很懂<br>我感觉作者的意思是在计算卷积的过程中，由于算出的激活值（输入值）为0的地方根本不需要进行计算，这些值对应的权重也可以（在filter中）修剪掉，窗口每次滑动的时候对应的filter的模式（有效权重的个数和位置）不同。我们可以把这些模式分出来，从而在计算过程中直接拿这些模式计算，可以修剪掉很多0值的操作。</p>
+<h4 id="Architecture"><a href="#Architecture" class="headerlink" title="Architecture"></a>Architecture</h4><p><img src="1_architecture.jpg" width="60%"><br>SNrram由很多tiles构成，每个tiles里面有很多Process elements(PE)，PE里面有crossbar矩阵，用于计算矩阵乘法<br>正，负权重分开放置</p>
+<h4 id="Evaluation"><a href="#Evaluation" class="headerlink" title="Evaluation"></a>Evaluation</h4><p>benchmark</p>
+<ul>
+<li>MLP,Lenet(数据集MNIST)</li>
+<li>VGG(数据集ImageNet)</li>
+<li>DCGAN(数据集celebA)</li>
+</ul>
+<p>横向比较：</p>
+<ul>
+<li>PRIME: state-of-the-art的RERAM神经网络实现</li>
+<li>SNrram-partial</li>
+<li>SNrram-full</li>
+</ul>
+<p>结果大概就是: SNram-full和PRIME比</p>
+<ul>
+<li>speedup: ~2.49x</li>
+<li>energy: 35.9% power consumption</li>
+<li>resource: 69.8% resource saving</li>
+</ul>
+<h3 id="文章二：AtomLayer-A-Universal-ReRAM-Based-CNN-Accelerator-with-Atomic-Layer-Computation"><a href="#文章二：AtomLayer-A-Universal-ReRAM-Based-CNN-Accelerator-with-Atomic-Layer-Computation" class="headerlink" title="文章二：AtomLayer: A Universal ReRAM-Based CNN Accelerator with Atomic Layer Computation"></a>文章二：AtomLayer: A Universal ReRAM-Based CNN Accelerator with Atomic Layer Computation</h3><p>前人的工作要么就是不能训练（ISSAC），要么就是inference的精确度不够（PipeLayer），作者提出了一种既能有效训练又有高精确度的ReRAM方案</p>
+<ol>
+<li>一次只计算一个神经网络层，为了防止pipeline带来的问题，如长延迟，pipeline bubbles和large on-chip buffer（为什么会带来这些问题我不懂）</li>
+<li>提出一种独特的数据映射方式（filter mapping）和数据在利用方式在最小化层之间的转换和DRAM数据获取</li>
+</ol>
+<h4 id="介绍了一下crossbar的矩阵运算"><a href="#介绍了一下crossbar的矩阵运算" class="headerlink" title="介绍了一下crossbar的矩阵运算"></a>介绍了一下crossbar的矩阵运算</h4><p><img src="2_crossbar.jpg" width="50%"><br>我的理解是输入数据从DRAM读出来，通过DAC转换为模拟信号和保存在电阻中的权重值进行乘法运算，然后结果通过采样保持，ADC和移位加法器输出</p>
+<h4 id="作者提出的整体结构图"><a href="#作者提出的整体结构图" class="headerlink" title="作者提出的整体结构图"></a>作者提出的整体结构图</h4><p><img src="2_architecture.jpg" width="50%"><br>filters的权重数据存在DRAM中，PE用于计算卷积<br>权重数据被写入PE中，然后与输入数据进行卷积操作，结果先后进过column ALU, global ALU后被写入DRAM<br>PE的结构图<br><img src="2_PE.jpg" width="60%"><br>PE包含3个部分</p>
+<ol>
+<li>rotating crossbar</li>
+<li>peripheral devices</li>
+<li>four buffers</li>
+</ol>
+<p>计算过程：</p>
+<ol>
+<li>先加载filters的权重数据到crossbar</li>
+<li>从DRAM中读出input</li>
+<li>算出一个卷积层的结果</li>
+<li>写入DRAM</li>
+<li>重新到步骤1，计算下一层</li>
+</ol>
+<p>PE中的rotating crossbar是关键<br>作者把多个crossbars组成一个crossbar set，一个周期内，一个crossbar set和读DAC和S&amp;H连接用于计算，一个crossbar set和写DAC连接用于写filter的权重值<br>crossbar set的数量不能比神经网络的层数少，为了保证不同层的filters写入到不同的crossbar set中<br>为了优化系统，作者提出了一种row-disjoint filter mapping和数据reuse系统<br><img src="2_filter_mapping.jpg" width="70%"><br>这里假设crossbar大小128x128，filter是3x3，输入feature map 5x5</p>
+<ol>
+<li>把每42个输入通道128个输出通道的每行（红蓝绿）分别抠出来</li>
+<li>相同（颜色）的行形成矩阵</li>
+<li>分别按原来的行的大小放入PE Array中</li>
+</ol>
+<p>我不懂为什么要这么做，或者这样做怎么实现数据共享或者利于计算？</p>
+<h4 id="为了行内的数据共享，作者提出了一个register-ladder结构"><a href="#为了行内的数据共享，作者提出了一个register-ladder结构" class="headerlink" title="为了行内的数据共享，作者提出了一个register ladder结构"></a>为了行内的数据共享，作者提出了一个register ladder结构</h4><p><img src="2_register_ladder.jpg" width="60%"><br>每个register ladder都有buffer模式和FIFO模式两种<br>在第1，2cycles，2列都是buffer模式，经过这两个周期，5个数据被读入进来。<br>在第3个cycle，上面的6个寄存器编程FIFO模式，吐出第一个元素，然后后面的元素依次前移<br>这样数据就可以在行内传递，但如何体现共享？</p>
+<h4 id="为了行间的数据共享，作者提出了一个buffer-ladder结构"><a href="#为了行间的数据共享，作者提出了一个buffer-ladder结构" class="headerlink" title="为了行间的数据共享，作者提出了一个buffer ladder结构"></a>为了行间的数据共享，作者提出了一个buffer ladder结构</h4><p><img src="2_buffer_ladder.jpg" width="60%"><br>行间是指PE与PE之间？<br>图中要使数据在PE2中使用后传到PE1中，可以看到在cycle2的时候PE2把数据传到RL的时候，有条线通过(local network)LNet把数据传到PE1了，这样就实现了PE间的数据共享？我不明白这样传数据的意义在哪里？</p>
+<h4 id="Evaluation-1"><a href="#Evaluation-1" class="headerlink" title="Evaluation"></a>Evaluation</h4><p>benchmark<br>for space exploration and performance</p>
+<ul>
+<li>VGG-19</li>
+</ul>
+<p>for inference latency and training efficiecy</p>
+<ul>
+<li>ResNet-152</li>
+<li>DCGGAN</li>
+</ul>
+<p>横向对比</p>
+<ul>
+<li>AtomLayer</li>
+<li>ISAAC</li>
+<li>Pipelayer</li>
+</ul>
+<p>结果大概是：<br>inference<br>在power efficiency improvement</p>
+<ul>
+<li>比ISAAC 1.1x</li>
+<li>比Pipelayer 4.7x</li>
+</ul>
+<p>对于inference latency，在ResNet-152 benchmark</p>
+<ul>
+<li>比ISAAC 12x</li>
+<li>比Pipelayer 5x</li>
+</ul>
+<p>training<br>在power efficiency improvement上</p>
+<ul>
+<li>比Pipelayer 1.6x</li>
+</ul>
+<h3 id="文章三：TRIG-Hardware-Accelerator-for-Inference-Based-Applications-and-Experimental-Demonstration-Using-Carbon-Nanotube-FETs"><a href="#文章三：TRIG-Hardware-Accelerator-for-Inference-Based-Applications-and-Experimental-Demonstration-Using-Carbon-Nanotube-FETs" class="headerlink" title="文章三：TRIG: Hardware Accelerator for Inference-Based Applications and Experimental Demonstration Using Carbon Nanotube FETs"></a>文章三：TRIG: Hardware Accelerator for Inference-Based Applications and Experimental Demonstration Using Carbon Nanotube FETs</h3><p>使用碳纳米场效应管（CNT）可以大大提高能量效率，但是会带来variations的问题，包括density，diameter等。一个解决variations的方式是共同优化CNT加工和CNTFET电路设计，但这种方法在实验上还没有实现。<br>作者提出了一种新的方法解决process variations的问题，叫TRIG: Technique for Reducing errors using Iterative Gray code<br>作者把CNFET用于二进制神经网络中，在二进制神经网络中，权重和激活值是1bit的+1或者-1（那岂不是精度很低？）<br><img src="3_architecture.jpg" width="60%"><br>上图展示了二进制神经网络的基本架构，输入数据和权重存在SRAM中，TRIG用于卷积层和全连接层的矩阵计算<br><img src="3_number_represent.jpg" width="60%"><br>TRIG和non-TRIG最主要的区别是，他使用了一种gray code和2进制code结合的数据表示方法</p>
+<ul>
+<li>数据的高位用gray code，低位用2进制编码</li>
+</ul>
+<p>计算矩阵的电路<br><img src="3_compute_matrix.jpg" width="60%"><br>输入X和权重W进行矩阵运算，结果累加后用上面的方式表示，然后作者提出了这种表示方法的实现电路，我还没看明白，也没看懂为什么这个表达方式就可以消除variations</p>
+<h4 id="Evaluation-2"><a href="#Evaluation-2" class="headerlink" title="Evaluation"></a>Evaluation</h4><p>作者评估了乘法计算单元的误差<br>TRIG vs. non-TRIG，评估的是计算结果的均值和标准差</p>
+<ul>
+<li>均值：700x</li>
+<li>标准差：400x</li>
+</ul>
+<p>评估了图像分类的精确度<br>TRIG vs. non-TRIG</p>
+<ul>
+<li>能耗：0.97x</li>
+<li>精确度：90% vs. 99%，但TRIG保存了CNFET的优势99% vs. 90%</li>
+</ul>
+<h3 id="文章四：Compensated-DNN-Energy-Efficient-Low-Precision-Deep-Neural-Networks-by-Compensating-Quantization-Errors"><a href="#文章四：Compensated-DNN-Energy-Efficient-Low-Precision-Deep-Neural-Networks-by-Compensating-Quantization-Errors" class="headerlink" title="文章四：Compensated-DNN: Energy Efficient Low-Precision Deep Neural Networks by Compensating Quantization Errors"></a>文章四：Compensated-DNN: Energy Efficient Low-Precision Deep Neural Networks by Compensating Quantization Errors</h3><p>量化神经网络可以提高资源利用率和节省能耗，但可能带来精度损失问题，一般量化到小于8bit就会出现精度损失问题<br>传统的方式使用的是一种Fixed Point（FxP）的数据表示方法来量化<br>8bit的Fixed Point数据表示方法是[Sign,IB,FB]<br>sign是符号位，IB表示整数位，FB表示小数位<br>下图介绍了Fixed Point的对3个数的编码，最后结果就是ax2^IB+bx2^(-FB)，a和b分别表示整数位和分数位读出来的数<br>作者在传统的方法上加了动态补偿位，提出了一种Fixed Point with Error Compensation(FPEC)的量化方法，补偿位是1-2bit<br>假设有矩阵X和Y，量化后QX和QY，量化误差X1,Y1，那么<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">X<span class="class">.Y</span> = QX<span class="class">.QY</span> + X1<span class="class">.QY</span> + Y1<span class="class">.QX</span> + X1.Y1</span><br></pre></td></tr></table></figure></p>
+<p>因为X1.Y1很小，所以可以忽略，有<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">X<span class="class">.Y</span> = QX<span class="class">.QY</span> + X1<span class="class">.QY</span> + Y1.QX</span><br></pre></td></tr></table></figure></p>
+<p>使用二进制来近似表示X1,Y1，那么之前的乘法运算可以表示成位移运算<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">X<span class="class">.Y</span> = QX<span class="class">.QY</span> + QX &gt;&gt; Y1 + QY &gt;&gt; X1</span><br></pre></td></tr></table></figure></p>
+<p>还可以把很小的量化误差（X1,Y1=0）的计算忽略<br>FPEC的数据表示格式如下<br><img src="4_FPEC_data_format.jpg" width="60%"><br>前面和FxP一样，只是增加了Error Direction Bit(EDB),Error Magnitude Bit(EMB),Error Zero Bit(EZB)这3个部分</p>
+<ul>
+<li>EDB用于表示误差的方向，正还是负，决定位移操作的左移还是右移</li>
+<li>EMB用于表示误差的大小，如果EMB只有1位，那么这个误差的分辨率是0.25，可以表示的误差范围是[-0.5,0.5]，需要和EDB一起考虑</li>
+<li>EZB用于表示误差是否为0，如果为0那么就直接忽略</li>
+</ul>
+<p>下面的一个例子可以看出使用FPEC是量化的误差从8.5%减少到了0.95%<br><img src="4_example.jpg" width="60%"></p>
+<h4 id="Evaluation-3"><a href="#Evaluation-3" class="headerlink" title="Evaluation"></a>Evaluation</h4><p>比较FPEC，FxP-16bit，FxP-8bit<br>enengy improvement</p>
+<ul>
+<li>FPEC vs. FxP-16bit 2.65x-4.88x</li>
+<li>FPEC vs. FxP-8bit 1.13x-1.7x</li>
+</ul>
+<p>精度上下0.5%，基本不变</p>
+<h3 id="文章五：Parallelizing-SRAM-Arrays-with-Customized-Bit-Cell-for-Binary-Neural-Networks"><a href="#文章五：Parallelizing-SRAM-Arrays-with-Customized-Bit-Cell-for-Binary-Neural-Networks" class="headerlink" title="文章五：Parallelizing SRAM Arrays with Customized Bit-Cell for Binary Neural Networks"></a>文章五：Parallelizing SRAM Arrays with Customized Bit-Cell for Binary Neural Networks</h3><p>作者设计了两种结构，6T SRAM for HBNN 和 8T SRAM for XNOR-BNN<br>作者使用computing-in-memory(CIM)的方式，可以减少计算和内存的消耗</p>
+<ul>
+<li>在HBNN中，权值表示为+1/-1,激活值表示为0/1</li>
+<li>在XNOR-BNN中，权值和激活值都表示为+1/-1</li>
+</ul>
+<h4 id="6T-和-8T-Bit-Cell的设计"><a href="#6T-和-8T-Bit-Cell的设计" class="headerlink" title="6T 和 8T Bit-Cell的设计"></a>6T 和 8T Bit-Cell的设计</h4><p><img src="5_schematic.jpg" width="60%"><br>在6T中</p>
+<ol>
+<li>输入从word line(WL)给入</li>
+<li>权重的值存储在bit-cell中，通过Q和QB</li>
+<li>BL和BLB的差分为输入和权值的乘积，从BL中读出</li>
+</ol>
+<p>在8T中</p>
+<ol>
+<li>有两个互补的word line(WL)，互补用来表示+1(1,0)和-1(0,1)</li>
+<li>输出结果也是BL和BLB的差分电压</li>
+<li>输出结果非0</li>
+</ol>
+<p>6T SRAM 和 8T SRAM的CIM结构<br><img src="5_architecture.jpg" width="60%"><br>传统的SRAM用于计算权重的累加（为什么），输入数据从WL进入，每次只有一行的数据被激活并进行运算和保存在寄存器中，最后又一个列累加器把所有的行的结果累加<br>作者提出了并行的SRAM结构，有一个WL开关矩阵用来同时激活多层的WLs，并行的读出<br>结果：<br>对VGG-16 on CIFAR-10 dataset, HBNN和XNOR-BNN减少精度损失分别是2.37%，0.88%<br>相比于传统的row-by-row SRAM结构在空间，延迟和能量效率方面都有提升，对各个神经网络的结果有差异</p>
+<h3 id="文章六：DeepN-JPEG-A-Deep-Neural-Network-Favorable-JPEG-based-Image-Compression-Framework"><a href="#文章六：DeepN-JPEG-A-Deep-Neural-Network-Favorable-JPEG-based-Image-Compression-Framework" class="headerlink" title="文章六：DeepN-JPEG: A Deep Neural Network Favorable JPEG-based Image Compression Framework"></a>文章六：DeepN-JPEG: A Deep Neural Network Favorable JPEG-based Image Compression Framework</h3><p>传统的JPEG压缩方式针对人类视觉系统（Human-Visual System，HVS），人的视觉主要感知低频信号，对高频信号不敏感，所以传统的JPEG压缩方式删除掉这些人类不敏感度的高频信号以达到压缩图像的目的<br>但是这种压缩方式不适用于DNN，因为DNN可以响应任何重要的频率，所以传统的JPEG压缩方式会产生精度损失<br><img src="6_overall.jpg" width="100%"><br>作者提出了一种适用于深度学习的JPEG压缩方式，基本思想是：<br>抽取全部数据集中的有代表性的特征，对这些特征对应的系数做统计和分级，得到每个频率的标准差，这些标标准差可以反映相应频率的重要程度（why？）。从文章中来看好像是低频信号标准差越大。<br>把这些标准差按大小放置在上升矩阵中，然后对重要程度不同的频率（频率成分的多少？）做不同程度的量化操作。<br>标准差越大（低频信号）需要做的量化操作越少，高频信号做的量化操作最多。</p>
+<h4 id="Evaluation-4"><a href="#Evaluation-4" class="headerlink" title="Evaluation"></a>Evaluation</h4><p>在ImageNet数据集上，神经网络为AlexNet，实现了3.5x压缩率，保持相同的精确度<br>能耗减少是2x到3x相比于RM-HF3和SAME-Q4</p>
+<h3 id="文章七：Calibrating-Process-Variation-at-System-Level-with-In-Situ-Low-Precision-Transfer-Learning-for-Analog-Neural-Network-Processors"><a href="#文章七：Calibrating-Process-Variation-at-System-Level-with-In-Situ-Low-Precision-Transfer-Learning-for-Analog-Neural-Network-Processors" class="headerlink" title="文章七：Calibrating Process Variation at System Level with In-Situ Low-Precision Transfer Learning for Analog Neural Network Processors"></a>文章七：Calibrating Process Variation at System Level with In-Situ Low-Precision Transfer Learning for Analog Neural Network Processors</h3><p>Process Variation(PV)会带来很多问题，如工作点转移，mismatch，这些会导致神经网络的精度损失<br>作者提出了In-Situ Low-Precision Transfer Learning方法来减少PV的影响<br><img src="7_architecture.jpg" width="90%"><br>基本思想是，当mapping新的NN算法参数的时候，通过学习错误模式来修正全连接层的参数来消除PV的影响。<br>权重更新器不必集成在ANN芯片上，可以在外部的CPU或者FPGA上实现，学习好后这个学习通道会关闭，直到需要修改NN结构或者参数<br>作者使用数据对数化讲乘法运算变成位移运算<br><img src="7_log_quantization.jpg" width="60%"><br>对于权重数据的存储分辨率在不同的阶段有不同，例如在inference阶段，权重只需要8bit就能保证多数算法的精度，但是在训练阶段需要10bit或者18bit来保证收敛。<br>因此作者采用多分辨率的权重存储方案<br><img src="7_weight_store.jpg" width="60%"></p>
+<ul>
+<li>卷积层的权重低精度保存，全连接层的权重放在高精度保存</li>
+<li>训练时，使用全连接层高分辨率确保收敛；未训练时，只使用其高bits做分类工作，这样不会增加芯片的消耗</li>
+</ul>
+<h4 id="Evaluation-5"><a href="#Evaluation-5" class="headerlink" title="Evaluation"></a>Evaluation</h4><ul>
+<li>工作点的偏差优化了50%</li>
+<li>实现更好的共模抑制比，输入偏置可以比以前大2x</li>
+<li>相比于浮点32位存储，实现了66.7%内存消耗</li>
+</ul>
+
+
+                <hr>
+
+                
+
+                <ul class="pager">
+                    
+                    
+                        <li class="next">
+                            <a href="/2017/02/17/spring学习-spring_helloworld/" data-toggle="tooltip" data-placement="top" title="spring学习-spring helloworld">Next Post &rarr;</a>
+                        </li>
+                    
+                </ul>
+
+                
+
+                
+
+            </div>
+    <!-- Side Catalog Container -->
+        
+
+    <!-- Sidebar Container -->
+
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+
+                <!-- Friends Blog -->
+                
+            </div>
+
+        </div>
+    </div>
+</article>
+
+
+
+
+
+
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                
+                
+                    <li>
+                        <a target="_blank" href="https://twitter.com/1187264955">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+                
+                    <li>
+                        <a target="_blank" href="https://www.zhihu.com/people/zengzhezz">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa  fa-stack-1x fa-inverse">知</i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank" href="http://weibo.com/zengzhezz">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/zengzhezz">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; zz的博客 2018 
+                    <br>
+                    Theme by <a href="http://huangxuan.me">Hux</a> 
+                    <span style="display: inline-block; margin: 0 5px;">
+                        <i class="fa fa-heart"></i>
+                    </span> 
+                    Ported by <a href="http://blog.kaijun.rocks">Kaijun</a> | 
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="91px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=kaijun&repo=hexo-theme-huxblog&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js" type="text/javascript"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js" type="text/javascript"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/hux-blog.min.js" type="text/javascript"></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/    
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("http://yoursite.com/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+
+
+<!-- Baidu Tongji -->
+
+
+<!-- Side Catalog -->
+
+
+
+
+
+<!-- Image to hack wechat -->
+<img src="http://yoursite.com/img/icon_wechat.png" width="0" height="0" />
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+</html>
