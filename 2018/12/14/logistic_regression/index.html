@@ -13,11 +13,11 @@
 
     <title>
         
-          Tags - zz的博客
+          用logistic regression做二值分类 - zz的博客
         
     </title>
 
-    <link rel="canonical" href="http://yoursite.com/tags/">
+    <link rel="canonical" href="http://yoursite.com/2018/12/14/logistic_regression/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css" type="text/css">
@@ -141,253 +141,124 @@
 
     <!-- Main Content -->
     
-<!-- Page Header -->
-<header class="intro-header" style="background-image: url('/img/tag-bg.jpg')">
+<!-- Image to hack wechat -->
+<!-- <img src="http://yoursite.com/img/icon_wechat.png" width="0" height="0"> -->
+<!-- <img src="{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}" width="0" height="0"> -->
+
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        background-image: url('pic1.png')
+    }
+</style>
+<header class="intro-header" >
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
-                <div class="site-heading">
-                    <h1>Tags</h1>
-                    <!--<hr class="small">-->
-                    <span class="subheading">Hey, this is Tags.</span>
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                          <a class="tag" href="/tags/#machine learning" title="machine learning">machine learning</a>
+                        
+                          <a class="tag" href="/tags/#statistic" title="statistic">statistic</a>
+                        
+                    </div>
+                    <h1>用logistic regression做二值分类</h1>
+                    <h2 class="subheading">logistic regression</h2>
+                    <span class="meta">
+                        Posted by zz on
+                        2018-12-14
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            <!-- 标签云 -->
-            <div id='tag_cloud' class="tags">
-                
-                    <a href="#java" title="java" rel="1">java</a>
-                
-                    <a href="#spring" title="spring" rel="1">spring</a>
-                
-                    <a href="#deep learning" title="deep learning" rel="2">deep learning</a>
-                
-                    <a href="#regression" title="regression" rel="1">regression</a>
-                
-                    <a href="#statistic" title="statistic" rel="1">statistic</a>
-                
-                    <a href="#machine learning" title="machine learning" rel="1">machine learning</a>
-                
-                    <a href="#android" title="android" rel="1">android</a>
-                
-            </div>
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
 
-            <!-- 标签列表 -->
+    <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
 
-            
-            <div class="one-tag-list">
-                <span class="fa fa-tag listing-seperator" id="java">
-                    <span class="tag-text">java</span>
-                </span>
-                
-                  <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-                 <div class="post-preview">
-                     <a href="/2017/02/17/spring学习-spring_helloworld/">
-                        <h2 class="post-title">
-                            spring学习-spring helloworld
-                        </h2>
-                        
-                            <h3 class="post-subtitle">
-                                spring helloworld
-                            </h3>
-                        
-                    </a>
-                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-                </div>
-                <hr>
-                
-            </div>
-            
-            <div class="one-tag-list">
-                <span class="fa fa-tag listing-seperator" id="spring">
-                    <span class="tag-text">spring</span>
-                </span>
-                
-                  <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-                 <div class="post-preview">
-                     <a href="/2017/02/17/spring学习-spring_helloworld/">
-                        <h2 class="post-title">
-                            spring学习-spring helloworld
-                        </h2>
-                        
-                            <h3 class="post-subtitle">
-                                spring helloworld
-                            </h3>
-                        
-                    </a>
-                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-                </div>
-                <hr>
-                
-            </div>
-            
-            <div class="one-tag-list">
-                <span class="fa fa-tag listing-seperator" id="deep learning">
-                    <span class="tag-text">deep learning</span>
-                </span>
-                
-                  <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-                 <div class="post-preview">
-                     <a href="/2018/12/03/regression_on_small_dataset/">
-                        <h2 class="post-title">
-                            关于regression work on small dataset的论文检索
-                        </h2>
-                        
-                            <h3 class="post-subtitle">
-                                regression
-                            </h3>
-                        
-                    </a>
-                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-                </div>
-                <hr>
-                
-                  <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-                 <div class="post-preview">
-                     <a href="/2018/07/16/7.15阅读论文总结/">
-                        <h2 class="post-title">
-                            论文阅读
-                        </h2>
-                        
-                            <h3 class="post-subtitle">
-                                总结
-                            </h3>
-                        
-                    </a>
-                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-                </div>
-                <hr>
-                
-            </div>
-            
-            <div class="one-tag-list">
-                <span class="fa fa-tag listing-seperator" id="regression">
-                    <span class="tag-text">regression</span>
-                </span>
-                
-                  <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-                 <div class="post-preview">
-                     <a href="/2018/12/03/regression_on_small_dataset/">
-                        <h2 class="post-title">
-                            关于regression work on small dataset的论文检索
-                        </h2>
-                        
-                            <h3 class="post-subtitle">
-                                regression
-                            </h3>
-                        
-                    </a>
-                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-                </div>
-                <hr>
-                
-            </div>
-            
-            <div class="one-tag-list">
-                <span class="fa fa-tag listing-seperator" id="statistic">
-                    <span class="tag-text">statistic</span>
-                </span>
-                
-                  <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-                 <div class="post-preview">
-                     <a href="/2018/12/14/logistic_regression/">
-                        <h2 class="post-title">
-                            用logistic regression做二值分类
-                        </h2>
-                        
-                            <h3 class="post-subtitle">
-                                logistic regression
-                            </h3>
-                        
-                    </a>
-                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-                </div>
-                <hr>
-                
-            </div>
-            
-            <div class="one-tag-list">
-                <span class="fa fa-tag listing-seperator" id="machine learning">
-                    <span class="tag-text">machine learning</span>
-                </span>
-                
-                  <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-                 <div class="post-preview">
-                     <a href="/2018/12/14/logistic_regression/">
-                        <h2 class="post-title">
-                            用logistic regression做二值分类
-                        </h2>
-                        
-                            <h3 class="post-subtitle">
-                                logistic regression
-                            </h3>
-                        
-                    </a>
-                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-                </div>
-                <hr>
-                
-            </div>
-            
-            <div class="one-tag-list">
-                <span class="fa fa-tag listing-seperator" id="android">
-                    <span class="tag-text">android</span>
-                </span>
-                
-                  <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-                 <div class="post-preview">
-                     <a href="/2016/05/09/android-notification/">
-                        <h2 class="post-title">
-                            Android Notification
-                        </h2>
-                        
-                            <h3 class="post-subtitle">
-                                Hello Android
-                            </h3>
-                        
-                    </a>
-                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-                </div>
-                <hr>
-                
-            </div>
-            
+                <h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>给出21个自变量（2值型和连续型），1个因变量（2值型）。希望通过逻辑回归建模，得到哪些自变量自变量可以用来预测因变量，并且希望知道自变量特定范围时因变量预测的敏感性和特异性等信息。</p>
+<h3 id="自变量初筛选"><a href="#自变量初筛选" class="headerlink" title="自变量初筛选"></a>自变量初筛选</h3><ol>
+<li>使用软件：SPSS</li>
+<li>数据一共96例，我们把大约80%的数据用于建模，20%用于测试，随机选出79例用于建模（这里我不知道SPSS为啥选出的是79例，我设置的是分配比例是80%）</li>
+</ol>
+<p>由于自变量比较多，这里想用对每个自变量和因变量单独进行逻辑回归的方式，筛选出对因变量影响较为显著的自变量。</p>
+<p><img src="logistic_allx.jpg" width="70%"></p>
+<p>上图为所有自变量进行单变量和多变量logistic回归分析结果。<br>从结果可以看出，单变量logistic回归分析中P值较低的自变量在多变量分析中P值也会相对较低，但也有特例。我们选出在单变量logistic回归分析中所有P&lt;0.2的自变量（图中黄色标记）进入后面的回归分析。</p>
+<p>选出自变量：ABCJLNOPQSTUVW</p>
+<h4 id="进一步筛选"><a href="#进一步筛选" class="headerlink" title="进一步筛选"></a>进一步筛选</h4><p>在不考虑这些自变量共线形的情况下，把选出的所有自变量进行多变量logistic回归分析，回归方式选择：向后LR，采样基于似然比的后退法筛选自变量。<br><img src="model_allx.jpg" width="50%"><br>通过上面的模型系数图可以看到，通过11步，logistic回归不断减少自变量个数，最后模型的P=0.007&lt;0.05，认为回归方程有意义。</p>
+<p><img src="Hosmer_L_allx.jpg" width="50%"><br>Hosmer-Lemeshow拟合优度检查结果显示P=0.663&gt;0.20，可以认为该回归模型较好的拟合了原始数据。<br><img src="last_allx.jpg" width="70%"><br>最后几步模型中包含的自变量和系数</p>
+<ul>
+<li><p>可以看到模型最后留下自变量ABPV，但AB的显著性P&gt;0.05，考虑到可能是共线性造成的。</p>
+</li>
+<li><p>这里我考虑到删除A，把BPV3个自变量再次进行logistic回归，回归方式选择：向后LR，模型回自动筛选掉显著性大于0.05的自变量B，只留下自变量PV。</p>
+</li>
+</ul>
+<p>模型检验表:<br><img src="model_deleteA.jpg" width="50%"></p>
+<p>变量表:<br><img src="variables_deleteA.jpg" width="70%"></p>
+<ul>
+<li>也可以考虑不删除AB中的任何一个，因为我看到有人说：模型显著说明回归方程有意义，单个自变量不显著说明对这个自变量的分析没有意义？</li>
+</ul>
+<h3 id="最终的logistic回归模型分析"><a href="#最终的logistic回归模型分析" class="headerlink" title="最终的logistic回归模型分析"></a>最终的logistic回归模型分析</h3><p>把PV作为自变量进行logistic回归分析<br><img src="model_PV.jpg" width="50%"></p>
+<p>得到最终的模型，P值为：，认为回归模型有意义<br><img src="variables_PV.jpg" width="70%"></p>
+<p>自变量P和V的P值都小于0.05，P的OR值（Exp(B)）为6.210，表示P增加0.1个单位，平均肺压为1的优势增加52.1%<br><img src="classification_PV.jpg" width="70%"></p>
+<p>最后可以得到包含建模样本和测试样本的分类表和ROC曲线<br><img src="ROC_PV.jpg" width="70%"></p>
 
+
+                <hr>
+
+                
+
+                <ul class="pager">
+                    
+                    
+                        <li class="next">
+                            <a href="/2018/12/03/regression_on_small_dataset/" data-toggle="tooltip" data-placement="top" title="关于regression work on small dataset的论文检索">Next Post &rarr;</a>
+                        </li>
+                    
+                </ul>
+
+                
+
+                
+
+            </div>
+    <!-- Side Catalog Container -->
+        
+
+    <!-- Sidebar Container -->
+
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+
+                <!-- Friends Blog -->
+                
+            </div>
 
         </div>
     </div>
-</div>
+</article>
+
+
+
+
+
+
+
 
 
     <!-- Footer -->
