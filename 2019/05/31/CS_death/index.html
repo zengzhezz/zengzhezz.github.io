@@ -13,7 +13,7 @@
 
     <title>
         
-          用machine learning来预测CS死亡率 - zz的博客
+          用machine learning来预测CS死亡率 - dewen的博客
         
     </title>
 
@@ -67,7 +67,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/">zz的博客</a>
+            <a class="navbar-brand" href="/">dewen的博客</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -215,7 +215,7 @@
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">Variables         Important score</span><br><span class="line">AH                <span class="number">0.0888</span></span><br><span class="line">L                 <span class="number">0.0863</span></span><br><span class="line">G                 <span class="number">0.0635</span></span><br><span class="line">AG                <span class="number">0.0609</span></span><br><span class="line">AQ                <span class="number">0.0533</span></span><br><span class="line">AN                <span class="number">0.0533</span></span><br><span class="line">AO                <span class="number">0.0533</span></span><br><span class="line">X                 <span class="number">0.0507</span></span><br><span class="line">F                 <span class="number">0.0507</span></span><br><span class="line">AE                <span class="number">0.0482</span></span><br><span class="line">BA                <span class="number">0.0457</span></span><br><span class="line">AB                <span class="number">0.0431</span></span><br><span class="line">AI                <span class="number">0.0431</span></span><br></pre></td></tr></table></figure>
 <p>同样，我们用上面选出的这13个变量建模，实验设置和之前一样，实验结果如下：</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Model         Number of features       Accuracy       Sensitivity     Specificity         AUC</span><br><span class="line">KNN           <span class="number">13</span>                       <span class="number">0.7467</span>         <span class="number">0.3671</span>          <span class="number">0.8825</span>              <span class="number">0.7229</span></span><br><span class="line">SVM           <span class="number">13</span>                       <span class="number">0.8550</span>         <span class="number">0.4457</span>          <span class="number">1.0000</span>              <span class="number">0.8419</span></span><br><span class="line">LR            <span class="number">13</span>                       <span class="number">0.8167</span>         <span class="number">0.5513</span>          <span class="number">0.9083</span>              <span class="number">0.8418</span></span><br><span class="line">RF            <span class="number">13</span>                       <span class="number">0.8525</span>         <span class="number">0.6170</span>          <span class="number">0.9349</span>              <span class="number">0.8637</span></span><br><span class="line">DTC           <span class="number">13</span>                       <span class="number">0.8208</span>         <span class="number">0.7030</span>          <span class="number">0.8593</span>              <span class="number">0.7812</span></span><br><span class="line">GBDT          <span class="number">13</span>                       <span class="number">0.8400</span>         <span class="number">0.5767</span>          <span class="number">0.9356</span>              <span class="number">0.8775</span></span><br><span class="line">XGBoost       <span class="number">13</span>                       <span class="number">0.8333</span>         <span class="number">0.5835</span>          <span class="number">0.9208</span>              <span class="number">0.8489</span></span><br></pre></td></tr></table></figure>
-<p>GBDT模型可以得到做好的AUC，和之前的36个特征相比，几乎无损失</p>
+<p>GBDT模型可以得到最好的AUC，和之前的36个特征相比，几乎无损失</p>
 <p>进一步，我们希望得到特征更少的模型，这里采用logistic回归中的逐步回归方法，以上面选出的13个特征为基础，继续得到简化的模型</p>
 <p>Step logistic regression的结果为：</p>
 <p><img src="step_logistic.jpg" width="80%"></p>
@@ -240,9 +240,9 @@
 <p>machine learning 建模结果:</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Model         Number of features       Accuracy       Sensitivity     Specificity         AUC</span><br><span class="line">KNN           <span class="number">2</span>                        <span class="number">0.7672</span>         <span class="number">0.3906</span>          <span class="number">0.8975</span>              <span class="number">0.7578</span></span><br><span class="line">SVM           <span class="number">2</span>                        <span class="number">0.7789</span>         <span class="number">0.2836</span>          <span class="number">0.9520</span>              <span class="number">0.6928</span></span><br><span class="line">LR            <span class="number">2</span>                        <span class="number">0.7778</span>         <span class="number">0.2126</span>          <span class="number">0.9787</span>              <span class="number">0.7921</span></span><br><span class="line">RF            <span class="number">2</span>                        <span class="number">0.7839</span>         <span class="number">0.2781</span>          <span class="number">0.9599</span>              <span class="number">0.7801</span></span><br><span class="line">DTC           <span class="number">2</span>                        <span class="number">0.7789</span>         <span class="number">0.2530</span>          <span class="number">0.9623</span>              <span class="number">0.7633</span></span><br><span class="line">GBDT          <span class="number">2</span>                        <span class="number">0.7828</span>         <span class="number">0.1996</span>          <span class="number">0.9873</span>              <span class="number">0.7735</span></span><br><span class="line">XGBoost       <span class="number">2</span>                        <span class="number">0.7675</span>         <span class="number">0.2679</span>          <span class="number">0.9420</span>              <span class="number">0.7764</span></span><br></pre></td></tr></table></figure>
 <p>模型性能有一些降低，敏感性降低很多，逻辑回归有更好的效果</p>
-<p>之后我们希望通过选出的2个变量建立一个患者的风险分层评分（risk stratification score, RSS）模型，将1分为低危组，2分为中危组，3分为高危组</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">Variables</span>       <span class="tag">beta</span>        <span class="tag">HR</span>(95% <span class="tag">CI</span>)                <span class="tag">P</span>         <span class="tag">Derived</span> <span class="tag">Score</span></span><br><span class="line"><span class="tag">L</span>               2<span class="class">.177</span>       8<span class="class">.817</span>(2<span class="class">.579-30</span><span class="class">.150</span>)       0<span class="class">.001</span>     1</span><br><span class="line"><span class="tag">AI</span>              3<span class="class">.154</span>       23<span class="class">.438</span>(3<span class="class">.537-155</span><span class="class">.305</span>)     0<span class="class">.001</span>     2</span><br></pre></td></tr></table></figure>
-<h3 id="最终的简化模型分析"><a href="#最终的简化模型分析" class="headerlink" title="最终的简化模型分析"></a>最终的简化模型分析</h3><p>我们的对最终建立的简化模型进行了分析，得到AUC为0.80。</p>
+<p>之后我们希望通过选出的2个变量建立一个患者的风险分层评分（risk stratification score, RSS）模型，将1分为低危组，2分为中危组，3分为高危组。（变量L和AI的分割阈值分别取3和1.27）</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">Variables</span>       <span class="tag">beta</span>        <span class="tag">HR</span>(95% <span class="tag">CI</span>)                <span class="tag">P</span>         <span class="tag">Derived</span> <span class="tag">Score</span></span><br><span class="line"><span class="tag">L</span>&gt;3             2<span class="class">.177</span>       8<span class="class">.817</span>(2<span class="class">.579-30</span><span class="class">.150</span>)       0<span class="class">.001</span>     1</span><br><span class="line"><span class="tag">AI</span>&gt;1<span class="class">.27</span>         3<span class="class">.154</span>       23<span class="class">.438</span>(3<span class="class">.537-155</span><span class="class">.305</span>)     0<span class="class">.001</span>     2</span><br></pre></td></tr></table></figure>
+<h3 id="最终的简化模型分析"><a href="#最终的简化模型分析" class="headerlink" title="最终的简化模型分析"></a>最终的简化模型分析</h3><p>我们的对最终建立的简化模型进行了分析，得到AUC为0.801</p>
 <p><img src="ROC.jpg" width="50%"></p>
 <p>Kaplan-Meier生存分析显示</p>
 <p><img src="KM_analysis.jpg" width="50%"></p>
@@ -310,15 +310,6 @@
                 <ul class="list-inline text-center">
                 
                 
-                    <li>
-                        <a target="_blank" href="https://twitter.com/1187264955">
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </a>
-                    </li>
-                
                 
                     <li>
                         <a target="_blank" href="https://www.zhihu.com/people/zengzhezz">
@@ -330,15 +321,6 @@
                     </li>
                 
 
-                
-                    <li>
-                        <a target="_blank" href="http://weibo.com/zengzhezz">
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </a>
-                    </li>
                 
 
                 
@@ -358,7 +340,7 @@
 
                 </ul>
                 <p class="copyright text-muted">
-                    Copyright &copy; zz的博客 2019 
+                    Copyright &copy; dewen的博客 2019 
                     <br>
                     Theme by <a href="http://huangxuan.me">Hux</a> 
                     <span style="display: inline-block; margin: 0 5px;">
