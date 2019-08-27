@@ -13,7 +13,7 @@
 
     <title>
         
-          用machine learning预测法洛四联症是否进行手术 - dewen的博客
+          用machine learning预测法洛四联症是否进行TAPE手术 - dewen的博客
         
     </title>
 
@@ -163,8 +163,8 @@
                           <a class="tag" href="/tags/#statistic" title="statistic">statistic</a>
                         
                     </div>
-                    <h1>用machine learning预测法洛四联症是否进行手术</h1>
-                    <h2 class="subheading">operation prediction</h2>
+                    <h1>用machine learning预测法洛四联症是否进行TAPE手术</h1>
+                    <h2 class="subheading">surgery prediction</h2>
                     <span class="meta">
                         Posted by dewen on
                         2019-08-27
@@ -192,14 +192,14 @@
 <p>因此，筛选出的变量分别为：F,G,J,K,L,M,O,T,W,X,Z,AE，共12个特征</p>
 <h3 id="Machine-Learning模型分析"><a href="#Machine-Learning模型分析" class="headerlink" title="Machine Learning模型分析"></a>Machine Learning模型分析</h3><h4 id="实验设置"><a href="#实验设置" class="headerlink" title="实验设置"></a>实验设置</h4><p>一共233组数据，自变量（F,G,J,K,L,M,O,T,W,X,Z,AE）。我们按照4:1的比例将数据集分为训练集和测试集，进行5则cross-validation。实验重复50次，取平均值。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Model         Number of features       Accuracy       Sensitivity     Specificity         AUC</span><br><span class="line">KNN           <span class="number">12</span>                       <span class="number">0.7344</span>         <span class="number">0.3974</span>          <span class="number">0.8741</span>              <span class="number">0.7432</span></span><br><span class="line">SVM           <span class="number">12</span>                       <span class="number">0.8241</span>         <span class="number">0.4025</span>          <span class="number">0.9997</span>              <span class="number">0.9452</span></span><br><span class="line">LR            <span class="number">12</span>                       <span class="number">0.8076</span>         <span class="number">0.6123</span>          <span class="number">0.8894</span>              <span class="number">0.8748</span></span><br><span class="line">RF            <span class="number">12</span>                       <span class="number">0.8793</span>         <span class="number">0.6642</span>          <span class="number">0.9688</span>              <span class="number">0.9518</span></span><br><span class="line">DTC           <span class="number">12</span>                       <span class="number">0.8828</span>         <span class="number">0.7485</span>          <span class="number">0.9398</span>              <span class="number">0.8442</span></span><br><span class="line">GBDT          <span class="number">12</span>                       <span class="number">0.8873</span>         <span class="number">0.7303</span>          <span class="number">0.9523</span>              <span class="number">0.9470</span></span><br><span class="line">XGBoost       <span class="number">12</span>                       <span class="number">0.8864</span>         <span class="number">0.7380</span>          <span class="number">0.9475</span>              <span class="number">0.9364</span></span><br></pre></td></tr></table></figure>
-<p><img src="ROC_12f.jpg" width="80%"></p>
-<p>由上表可知，Random Forest (RF), Support Vection Machine (SVM) and GBDT (Gradient Boosting Decision Tree)都有较好的AUC，其中随机森林模型的预测AUC最大，因此采用随机森林模型进行分析。</p>
+<p><img src="ROC_12f.jpg" width="40%"></p>
+<p>由上表可知，Random Forest (RF), Support Vection Machine (SVM) and GBDT (Gradient Boosting Decision Tree)都有较好的AUC，其中随机森林（RF）模型的预测AUC最大，因此采用随机森林模型进行分析。</p>
 <p>使用随机森林模型对特征的重要性进行排序，得到下表:</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Variables         Important score</span><br><span class="line">W                 <span class="number">0.215438</span></span><br><span class="line">X                 <span class="number">0.203112</span></span><br><span class="line">O                 <span class="number">0.124807</span></span><br><span class="line">M                 <span class="number">0.095907</span></span><br><span class="line">Z                 <span class="number">0.079793</span></span><br><span class="line">F                 <span class="number">0.065979</span></span><br><span class="line">G                 <span class="number">0.063884</span></span><br><span class="line">L                 <span class="number">0.043462</span></span><br><span class="line">K                 <span class="number">0.041369</span></span><br><span class="line">T                 <span class="number">0.036088</span></span><br><span class="line">J                 <span class="number">0.021013</span></span><br><span class="line">AE                <span class="number">0.009147</span></span><br></pre></td></tr></table></figure>
-<p>如果我们将重要性程度的阈值定为0.1，那么可以得到重要性最大的特征 W,X,O。</p>
+<p>如果我们将重要性程度的阈值定为0.1，那么可以得到重要性最大的特征W,X,O。</p>
 <p>之后我们用这3个特征建模，观察实验结果：</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Model         Number of features       Accuracy       Sensitivity     Specificity         AUC</span><br><span class="line">KNN           <span class="number">3</span>                        <span class="number">0.7980</span>         <span class="number">0.5908</span>          <span class="number">0.8900</span>              <span class="number">0.8536</span></span><br><span class="line">SVM           <span class="number">3</span>                        <span class="number">0.8093</span>         <span class="number">0.5626</span>          <span class="number">0.9190</span>              <span class="number">0.8472</span></span><br><span class="line">LR            <span class="number">3</span>                        <span class="number">0.7601</span>         <span class="number">0.5162</span>          <span class="number">0.8652</span>              <span class="number">0.8517</span></span><br><span class="line">RF            <span class="number">3</span>                        <span class="number">0.8835</span>         <span class="number">0.7319</span>          <span class="number">0.9493</span>              <span class="number">0.9351</span></span><br><span class="line">DTC           <span class="number">3</span>                        <span class="number">0.8848</span>         <span class="number">0.7717</span>          <span class="number">0.9350</span>              <span class="number">0.8533</span></span><br><span class="line">GBDT          <span class="number">3</span>                        <span class="number">0.8850</span>         <span class="number">0.7500</span>          <span class="number">0.9430</span>              <span class="number">0.9246</span></span><br><span class="line">XGBoost       <span class="number">3</span>                        <span class="number">0.7994</span>         <span class="number">0.5705</span>          <span class="number">0.8958</span>              <span class="number">0.8768</span></span><br></pre></td></tr></table></figure>
-<p><img src="ROC_3f.jpg" width="80%"></p>
+<p><img src="ROC_3f.jpg" width="40%"></p>
 <p>结果显示，我们使用W,X,O这三个特征建模，随机森林模型可以达到AUC为0.9351。</p>
 <ul>
 <li>W : PA</li>
@@ -207,8 +207,8 @@
 <li>O : 术前PV Vmax</li>
 </ul>
 <p>同时，我想实验一下在用逻辑回归分析的情况下，1.纳入W,X,O； 2.只纳入X,O；3.只纳入Z值，这三种情况哪一种预测模型更好。</p>
-<p><img src="logistic_roc.jpg" width="80%"></p>
-<p>可以看到，加入在PVA, PVmax的基础上加上PA可以进一步提高模型的精度</p>
+<p><img src="logistic_roc.jpg" width="40%"></p>
+<p>可以看到，在PVA, PVmax的基础上加上PA可以进一步提高模型的精度</p>
 
 
                 <hr>
