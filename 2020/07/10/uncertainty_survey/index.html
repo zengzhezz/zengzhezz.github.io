@@ -186,8 +186,7 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-                <p>Revisiting the Evaluation of Uncertainty Estimation and Its Application to Explore Model Complexity-Uncertainty Trade-Off <a href="https://openaccess.thecvf.com/content_CVPRW_2020/papers/w1/Ding_Revisiting_the_Evaluation_of_Uncertainty_Estimation_and_Its_Application_to_CVPRW_2020_paper.pdf" target="_blank" rel="external">url</a></p>
-<p>通常情况下，我们计算完模型的uncertainty之后，有两个use cases. (1) selective prediction, (2) confidence calibration.</p>
+                <h5 id="Revisiting-the-Evaluation-of-Uncertainty-Estimation-and-Its-Application-to-Explore-Model-Complexity-Uncertainty-Trade-Off-url"><a href="#Revisiting-the-Evaluation-of-Uncertainty-Estimation-and-Its-Application-to-Explore-Model-Complexity-Uncertainty-Trade-Off-url" class="headerlink" title="Revisiting the Evaluation of Uncertainty Estimation and Its Application to Explore Model Complexity-Uncertainty Trade-Off url"></a>Revisiting the Evaluation of Uncertainty Estimation and Its Application to Explore Model Complexity-Uncertainty Trade-Off <a href="https://openaccess.thecvf.com/content_CVPRW_2020/papers/w1/Ding_Revisiting_the_Evaluation_of_Uncertainty_Estimation_and_Its_Application_to_CVPRW_2020_paper.pdf" target="_blank" rel="external">url</a></h5><p>通常情况下，我们计算完模型的uncertainty之后，有两个use cases. (1) selective prediction, (2) confidence calibration.</p>
 <ul>
 <li>selective prediction: 选择一个confidence的阈值t，然后把小于阈值的样本剔除掉。通常情况下的评价指标是Area Under Receiver Operating Characteristic curve(AUROC) 和Area Under Precision-Recall curve(AUPR)。</li>
 <li>confidence calibration: 找到一个confidence score，能够直接反应这个模型经验上的准确度 (一般情况下就算我们predict某个sample的confidence是0.9，假设confidence的范围为[0,1]，那我们也并不能断定这个sample被predict正确的概率就是0.9，因为accuracy和confidence会有一定误差)。通常在这个use case里用来评价模型uncertainty预测好坏的指标是Expected Calibration Error(ECE)和Maximum Calibration Error(MCE)。</li>
